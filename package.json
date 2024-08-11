@@ -1,0 +1,25 @@
+{
+  "name": "apptaskbackend",
+  "version": "1.0.0",
+  "description": "App Task Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronJau21/AppTask_Backend.git"
+  },
+  "keywords": [
+    "EXPRESS",
+    "TS",
+    "MONGODB",
+    "MONGOOSE"
+  ],
+  "author": "Aaron Jauregui Sifuentes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaronJau21/AppTask_Backend/issues"
+  },
+  "homepage": "https://github.com/aaronJau21/AppTask_Backend#readme"
+}
