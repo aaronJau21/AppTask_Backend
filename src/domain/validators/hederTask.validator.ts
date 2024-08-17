@@ -1,9 +1,9 @@
 import { param } from 'express-validator';
 import { validate } from './validate.validators';
 
-export const headerValidators = () => {
+export const headerTaskValidators = () => {
   return [
-    param( 'id' ).isMongoId(),
+    param( 'idTask' ).isMongoId(),
     validate
   ];
 };

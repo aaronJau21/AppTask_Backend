@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { ProjectController } from './controller';
 import { ProjectService } from './project.service';
-import { headerValidators, projectValidators, projectValidatorsUpdate } from '../../domain';
+import { headerProjectValidators, projectValidators, projectValidatorsUpdate } from '../../domain';
 
 export class ProjectRoutes {
 
@@ -13,9 +13,9 @@ export class ProjectRoutes {
 
     router.post( '/create', projectValidators(), controller.register );
     router.get( '/', controller.getProjects );
-    router.get( '/:id', headerValidators(), controller.getProjectById );
-    router.patch( '/:id', headerValidators(), projectValidatorsUpdate(), controller.updateProject );
-    router.delete( '/:id', headerValidators(), controller.deleteProject );
+    router.get( '/:id', headerProjectValidators(), controller.getProjectById );
+    router.patch( '/:id', headerProjectValidators(), projectValidatorsUpdate(), controller.updateProject );
+    router.delete( '/:id', headerProjectValidators(), controller.deleteProject );
 
     return router;
 

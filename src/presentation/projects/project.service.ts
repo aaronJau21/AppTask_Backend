@@ -44,7 +44,7 @@ export class ProjectService {
   async getProjectById( id: string ) {
 
     try {
-      const projects = await ProjectModel.findById( id ).select( 'projectName clientName description' );
+      const projects = await ProjectModel.findById( id ).select( 'projectName clientName description' ).populate('tasks');
 
       return projects;
 
