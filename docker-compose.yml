@@ -1,11 +1,12 @@
-version: "3.8"
+# Activar la Version si es necesario
+# version: '3.8'
 
 services:
   mongo:
     image: mongo
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: mongo
+    #   MONGO_INITDB_ROOT_PASSWORD: 123456
     volumes:
       - ./mongo:/data/db
     ports:

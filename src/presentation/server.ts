@@ -1,4 +1,6 @@
-import express, { Router } from 'express';
+import express, { Router } from "express";
+import { corsConfig } from "../config";
+import cors from "cors";
 
 interface Options {
   port: number;
@@ -11,8 +13,7 @@ export class Server {
   private readonly port: number;
   private readonly routes: Router;
 
-
-  constructor( options: Options ) {
+  constructor(options: Options) {
     const { port, routes } = options;
 
     this.port = port;
@@ -20,19 +21,19 @@ export class Server {
   }
 
   async start() {
-    this.app.use( express.json() );
-    this.app.use( express.urlencoded( { extended: true } ) );
+    this.app.use(cors(corsConfig));
 
-    this.app.use( this.routes );
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
 
-    this.serverListener = this.app.listen( this.port, () => console.log( `Server Running on port ${ this.port }` ) );
+    this.app.use(this.routes);
 
+    this.serverListener = this.app.listen(this.port, () =>
+      console.log(`Server Running on port ${this.port}`)
+    );
   }
 
   public close() {
     this.serverListener?.close();
   }
-
-
-
 }
